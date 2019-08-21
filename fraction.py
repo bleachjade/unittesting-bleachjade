@@ -39,8 +39,18 @@ class Fraction:
         denominator = self.denominator*frac.denominator
         return Fraction(numerator, denominator)
 
+    def __sub__(self, frac):
+        """Return the minus result of two fractions as a new fraction.
+           Use the standard formula  a/b - c/d = (ad-bc)/(b*d)
+        """
+        numerator = (self.numerator*frac.denominator)-(self.denominator*frac.numerator)
+        denominator = self.denominator*frac.denominator
+        return Fraction(numerator, denominator)
+
     def __mul__(self, frac):
-        """Return multiplication of two fractions as a new fraction"""
+        """Return the multiplication of two fractions as a new fraction.
+           Use the standard formula  a/b * c/d = (a*c)/(b*d)
+        """
         numerator = self.numerator*frac.numerator
         denominator = self.denominator*frac.denominator
         return Fraction(numerator, denominator)
@@ -53,9 +63,7 @@ class Fraction:
         if self.denominator == 1:
             return str(self.numerator)
         return str(self.numerator)+"/"+str(self.denominator)
-    # __sub__ for f-g
-    # __gt__  for f > g
-    # __neg__ for -f (negation)
+
 
     def __eq__(self, frac):
         """Two fractions are equal if they have the same value.
