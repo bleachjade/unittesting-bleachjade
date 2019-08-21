@@ -14,7 +14,13 @@ def unique(list):
     ['b', 'a']
     >>> unique([])
     []
+    >>> unique([1,1,1,1,1])
+    [1]
+    >>> unique([True, False])
+    [True, False]
     """
+    if type(list) is not type([]):
+        raise TypeError("Please input a list.")
     lst = []
     for i in list:
         if i not in lst:

@@ -53,8 +53,6 @@ class Fraction:
         if self.denominator == 1:
             return str(self.numerator)
         return str(self.numerator)+"/"+str(self.denominator)
-    #TODO write __mul__ and __str__.  Verify __eq__ works with your code.
-    #Optional have fun and overload other operators such as 
     # __sub__ for f-g
     # __gt__  for f > g
     # __neg__ for -f (negation)
