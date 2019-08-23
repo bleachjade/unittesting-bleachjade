@@ -16,9 +16,7 @@ class Fraction:
         """
         self.numerator = numerator
         self.denominator = denominator
-        if self.denominator == 0:
-            raise ValueError
-        elif self.denominator < 0:
+        if self.denominator < 0:
             self.numerator = -1*numerator
             self.denominator = abs(denominator)
         self.gcd()
@@ -28,8 +26,12 @@ class Fraction:
            and denominator.
         """
         gcd = math.gcd(self.numerator, self.denominator)
-        self.numerator = int(self.numerator/gcd)
-        self.denominator = int(self.denominator/gcd)
+
+        if self.denominator == 0:
+            self.denominator = 0
+        else:
+            self.numerator = int(self.numerator/gcd)
+            self.denominator = int(self.denominator/gcd)
 
     def __add__(self, frac):
         """Return the sum of two fractions as a new fraction.
@@ -56,6 +58,8 @@ class Fraction:
         return Fraction(numerator, denominator)
 
     def __str__(self):
+        if self.numerator == 0 and self.denominator == 0:
+            return str(self.numerator)+"/"+str(self.denominator)
         if self.denominator == -1:
             return str(self.numerator)
         elif self.denominator < 0:

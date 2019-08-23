@@ -7,7 +7,7 @@ by Bill Gates.
 
 
 | Test case              |  Expected Result    |
-|------------------------|---------------------|
+|:---|:---|
 | empty list             |  empty list         |
 | one item               |  list with 1 item   |
 | one item many times    |  list with 1 item   |
@@ -19,12 +19,13 @@ by Bill Gates.
 ## Test Cases for Fraction
 
 
-| Test case              |  Expected Result    |
-|------------------------|---------------------|
-| init method            | initial fraction    |
-| str method             | shows fraction in the string form |
+| Test case             |  Expected Result    |
+| :--- |:---|
+| init method            |  initial fraction   |
+| str method             |  shows fraction in the string form |
 | add method             | the sum of two fractions as a new fraction. |
 | sub method             | the minus result of two fractions as a new fraction. |
 | mul method             | the multiplication of two fractions as a new fraction. |
-| eq method              | Two fractions are equal if they have the same value.Fractions are stored in proper form so the internal representation is unique. |
+| eq method              | check two function if there are equal or not. |
 | gcd method             | the Greatest Common Divisor of numerator and denominator. |
+| check 0/0              | check if user input 0/0 it'll output as 0/0 not an error. |

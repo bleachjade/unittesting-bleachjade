@@ -27,6 +27,9 @@ class FractionTest(unittest.TestCase):
         k = Fraction(-5)
         self.assertEqual(-5, k.numerator)
         self.assertEqual(1, k.denominator)
+        l = Fraction(0, 0)
+        self.assertEqual(0, l.numerator)
+        self.assertEqual(0, l.denominator)
 
     def test_str(self):
         """Test __str__ method"""
@@ -46,6 +49,8 @@ class FractionTest(unittest.TestCase):
         self.assertEqual("-3/5", f.__str__())
         f = Fraction(99)
         self.assertEqual("99", f.__str__())
+        f = Fraction(0, 0)
+        self.assertEqual("0/0", f.__str__())
 
 
     def test_add(self):
@@ -59,6 +64,7 @@ class FractionTest(unittest.TestCase):
 
     def test_sub(self):
         """Test __sub__ method"""
+        # 1/2 = 2 - 3/2
         self.assertEqual(Fraction(-7,12), Fraction(1,12)-Fraction(2,3))
         self.assertEqual(Fraction(1,2), Fraction(2)-Fraction(3,2))
         self.assertEqual(Fraction(1), Fraction(-1)-Fraction(-2))
@@ -67,6 +73,7 @@ class FractionTest(unittest.TestCase):
 
     def test_mul(self):
         """Test __mul__ method"""
+        # 3/4 = 1/2 * 3/2
         self.assertEqual(Fraction(3,4), Fraction(1,2)*Fraction(3,2))
         self.assertEqual(Fraction(1,2), Fraction(1,12)*Fraction(6,1))
         self.assertEqual(Fraction(1), Fraction(1,10)*Fraction(10,1))
@@ -82,9 +89,11 @@ class FractionTest(unittest.TestCase):
         g = Fraction(-40,-80)
         h = Fraction(10000,20001) # not quite 1/2
         i = Fraction(-50)
+        NaN = Fraction(0, 0)
         self.assertTrue(f == g)
         self.assertTrue(f.__eq__(g))  # same thing
         self.assertFalse(f == h)
         self.assertFalse(f.__eq__(h))
         self.assertFalse(i == g)
         self.assertFalse(i.__eq__(g))
+        self.assertFalse(NaN == f)
