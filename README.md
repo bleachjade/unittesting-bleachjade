@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.com/bleachjade/demo-pyci.svg?branch=master)](https://travis-ci.com/bleachjade/unittesting-bleachjade)
 
+[![codecov](https://codecov.io/gh/bleachjade/unittesting-bleachjade/branch/master/graph/badge.svg)](https://codecov.io/gh/bleachjade/unittesting-bleachjade)
+
 by Bill Gates and Jade
 
 
